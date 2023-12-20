@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ingatlanok",
+  "info": {
+    "singularName": "ingatlan",
+    "pluralName": "ingatlanok",
+    "displayName": "Ingatlanok"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nev": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}
