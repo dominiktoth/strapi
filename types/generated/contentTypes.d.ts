@@ -368,14 +368,19 @@ export interface ApiIngatlanIngatlan extends Schema.CollectionType {
     singularName: 'ingatlan';
     pluralName: 'ingatlanok';
     displayName: 'Ingatlanok';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Nev: Attribute.String;
+    Title: Attribute.String;
     Image: Attribute.Media;
-    Description: Attribute.Text;
+    Description: Attribute.RichText;
+    Location: Attribute.String;
+    Bedrooms: Attribute.Integer;
+    Bathrooms: Attribute.Integer;
+    Area: Attribute.Decimal;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

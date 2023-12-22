@@ -4,28 +4,42 @@
   "info": {
     "singularName": "ingatlan",
     "pluralName": "ingatlanok",
-    "displayName": "Ingatlanok"
+    "displayName": "Ingatlanok",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Nev": {
+    "Title": {
       "type": "string"
     },
     "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "Description": {
-      "type": "text"
+      "type": "richtext"
+    },
+    "Location": {
+      "type": "string"
+    },
+    "Bedrooms": {
+      "type": "integer"
+    },
+    "Bathrooms": {
+      "type": "integer"
+    },
+    "Area": {
+      "type": "decimal"
     }
   }
 }
