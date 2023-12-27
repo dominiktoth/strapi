@@ -13,9 +13,32 @@
   "pluginOptions": {},
   "attributes": {
     "Title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Platform": {
+      "type": "enumeration",
+      "enum": [
+        "Booking",
+        "Airbnb"
+      ]
+    },
+    "Owner": {
+      "type": "string",
+      "required": true
+    },
+    "OwnerImage": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -26,20 +49,12 @@
         "audios"
       ]
     },
-    "Description": {
-      "type": "richtext"
-    },
-    "Location": {
-      "type": "string"
-    },
-    "Bedrooms": {
-      "type": "integer"
-    },
-    "Bathrooms": {
-      "type": "integer"
-    },
-    "Area": {
-      "type": "decimal"
+    "Rating": {
+      "type": "integer",
+      "required": false,
+      "max": 5,
+      "min": 1,
+      "default": 5
     }
   }
 }

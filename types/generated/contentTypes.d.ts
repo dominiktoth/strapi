@@ -990,13 +990,17 @@ export interface ApiIngatlanIngatlan extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Title: Attribute.String;
-    Image: Attribute.Media;
-    Description: Attribute.RichText;
-    Location: Attribute.String;
-    Bedrooms: Attribute.Integer;
-    Bathrooms: Attribute.Integer;
-    Area: Attribute.Decimal;
+    Title: Attribute.String & Attribute.Required;
+    Image: Attribute.Media & Attribute.Required;
+    Platform: Attribute.Enumeration<['Booking', 'Airbnb']>;
+    Owner: Attribute.String & Attribute.Required;
+    OwnerImage: Attribute.Media;
+    Rating: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 1;
+        max: 5;
+      }> &
+      Attribute.DefaultTo<5>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1008,6 +1012,39 @@ export interface ApiIngatlanIngatlan extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::ingatlan.ingatlan',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSzolgaltatasSzolgaltatas extends Schema.CollectionType {
+  collectionName: 'szolgaltatasok';
+  info: {
+    singularName: 'szolgaltatas';
+    pluralName: 'szolgaltatasok';
+    displayName: 'Szolg\u00E1ltat\u00E1sok';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.Required;
+    Content: Attribute.RichText & Attribute.Required;
+    ShortDescription: Attribute.RichText & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::szolgaltatas.szolgaltatas',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::szolgaltatas.szolgaltatas',
       'oneToOne',
       'admin::user'
     > &
@@ -1035,6 +1072,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::fooldal.fooldal': ApiFooldalFooldal;
       'api::ingatlan.ingatlan': ApiIngatlanIngatlan;
+      'api::szolgaltatas.szolgaltatas': ApiSzolgaltatasSzolgaltatas;
     }
   }
 }
