@@ -1034,6 +1034,7 @@ export interface ApiSzolgaltatasSzolgaltatas extends Schema.CollectionType {
     Title: Attribute.String & Attribute.Required;
     Content: Attribute.RichText & Attribute.Required;
     ShortDescription: Attribute.RichText & Attribute.Required;
+    Ikon: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
