@@ -374,13 +374,17 @@ export interface ApiIngatlanIngatlan extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Title: Attribute.String;
-    Image: Attribute.Media;
-    Description: Attribute.RichText;
-    Location: Attribute.String;
-    Bedrooms: Attribute.Integer;
-    Bathrooms: Attribute.Integer;
-    Area: Attribute.Decimal;
+    Title: Attribute.String & Attribute.Required;
+    Image: Attribute.Media & Attribute.Required;
+    Platform: Attribute.Enumeration<['Booking', 'Airbnb']>;
+    Owner: Attribute.String & Attribute.Required;
+    OwnerImage: Attribute.Media;
+    Rating: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 1;
+        max: 5;
+      }> &
+      Attribute.DefaultTo<5>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
