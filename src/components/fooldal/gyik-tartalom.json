@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_gyik_gyik_tartaloms",
+  "info": {
+    "displayName": "Gyik tartalom",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Gyik_kerdes": {
+      "type": "text"
+    },
+    "Gyik_valasz": {
+      "type": "blocks"
+    }
+  }
+}
