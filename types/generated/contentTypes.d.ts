@@ -362,47 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiIngatlanIngatlan extends Schema.CollectionType {
-  collectionName: 'ingatlanok';
-  info: {
-    singularName: 'ingatlan';
-    pluralName: 'ingatlanok';
-    displayName: 'Ingatlanok';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.Required;
-    Image: Attribute.Media & Attribute.Required;
-    Platform: Attribute.Enumeration<['Booking', 'Airbnb']>;
-    Owner: Attribute.String & Attribute.Required;
-    OwnerImage: Attribute.Media;
-    Rating: Attribute.Integer &
-      Attribute.SetMinMax<{
-        min: 1;
-        max: 5;
-      }> &
-      Attribute.DefaultTo<5>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::ingatlan.ingatlan',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::ingatlan.ingatlan',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -809,6 +768,80 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiIngatlanIngatlan extends Schema.CollectionType {
+  collectionName: 'ingatlanok';
+  info: {
+    singularName: 'ingatlan';
+    pluralName: 'ingatlanok';
+    displayName: 'Ingatlanok';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.Required;
+    Image: Attribute.Media & Attribute.Required;
+    Platform: Attribute.Enumeration<['Booking', 'Airbnb']>;
+    Owner: Attribute.String & Attribute.Required;
+    OwnerImage: Attribute.Media;
+    Rating: Attribute.Integer &
+      Attribute.SetMinMax<{
+        min: 1;
+        max: 5;
+      }> &
+      Attribute.DefaultTo<5>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::ingatlan.ingatlan',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::ingatlan.ingatlan',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSzolgaltatasSzolgaltatas extends Schema.CollectionType {
+  collectionName: 'szolgaltatasok';
+  info: {
+    singularName: 'szolgaltatas';
+    pluralName: 'szolgaltatasok';
+    displayName: 'Szolg\u00E1ltat\u00E1sok';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.Required;
+    Content: Attribute.RichText & Attribute.Required;
+    ShortDescription: Attribute.RichText & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::szolgaltatas.szolgaltatas',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::szolgaltatas.szolgaltatas',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -819,7 +852,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::ingatlan.ingatlan': ApiIngatlanIngatlan;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -828,6 +860,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::ingatlan.ingatlan': ApiIngatlanIngatlan;
+      'api::szolgaltatas.szolgaltatas': ApiSzolgaltatasSzolgaltatas;
     }
   }
 }
