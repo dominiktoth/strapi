@@ -5,14 +5,17 @@ import { IconBox } from '../../../../components/fooldal/interfaces/IconBox';
 import { BemutatkozasSzekcio } from '../../../../components/fooldal/interfaces/BemutatkozasSzekcio';
 import { GyakoriKerdesek } from '../../../../components/fooldal/interfaces/GyakoriKerdesek';
 import { Velemeny } from '../../../../components/fooldal/interfaces/Velemeny';
+import { FooterFelettCta } from '../../../../components/footer-cta/interfaces/FooterFelettCta';
 import { IconBox_Plain } from '../../../../components/fooldal/interfaces/IconBox';
 import { BemutatkozasSzekcio_Plain } from '../../../../components/fooldal/interfaces/BemutatkozasSzekcio';
 import { GyakoriKerdesek_Plain } from '../../../../components/fooldal/interfaces/GyakoriKerdesek';
 import { Velemeny_Plain } from '../../../../components/fooldal/interfaces/Velemeny';
+import { FooterFelettCta_Plain } from '../../../../components/footer-cta/interfaces/FooterFelettCta';
 import { IconBox_NoRelations } from '../../../../components/fooldal/interfaces/IconBox';
 import { BemutatkozasSzekcio_NoRelations } from '../../../../components/fooldal/interfaces/BemutatkozasSzekcio';
 import { GyakoriKerdesek_NoRelations } from '../../../../components/fooldal/interfaces/GyakoriKerdesek';
 import { Velemeny_NoRelations } from '../../../../components/fooldal/interfaces/Velemeny';
+import { FooterFelettCta_NoRelations } from '../../../../components/footer-cta/interfaces/FooterFelettCta';
 import { AdminPanelRelationPropertyModification } from '../../../../common/schemas-to-ts/AdminPanelRelationPropertyModification';
 
 export interface Fooldal {
@@ -46,6 +49,7 @@ export interface Fooldal {
     Blog_szekcio_cim?: string;
     Blog_szekcio_alcim?: string;
     Blog_szekcio_gomb?: string;
+    Cta_szekcio?: FooterFelettCta;
     locale: string;
     localizations?: { data: Fooldal[] };
   };
@@ -80,6 +84,7 @@ export interface Fooldal_Plain {
   Blog_szekcio_cim?: string;
   Blog_szekcio_alcim?: string;
   Blog_szekcio_gomb?: string;
+  Cta_szekcio?: FooterFelettCta_Plain;
   locale: string;
   localizations?: Fooldal[];
 }
@@ -114,6 +119,7 @@ export interface Fooldal_NoRelations {
   Blog_szekcio_cim?: string;
   Blog_szekcio_alcim?: string;
   Blog_szekcio_gomb?: string;
+  Cta_szekcio?: FooterFelettCta_NoRelations;
   locale: string;
   localizations?: Fooldal[];
 }
@@ -148,6 +154,7 @@ export interface Fooldal_AdminPanelLifeCycle {
   Blog_szekcio_cim?: string;
   Blog_szekcio_alcim?: string;
   Blog_szekcio_gomb?: string;
+  Cta_szekcio?: FooterFelettCta_Plain;
   locale: string;
   localizations?: Fooldal[];
 }

@@ -69,6 +69,24 @@ export interface FooldalVelemeny extends Schema.Component {
   };
 }
 
+export interface FooterCtaFooterFelettCta extends Schema.Component {
+  collectionName: 'components_footer_cta_footer_felett_ctas';
+  info: {
+    displayName: 'Footer_felett_cta';
+    icon: 'earth';
+    description: '';
+  };
+  attributes: {
+    Cta_cim: Attribute.Text &
+      Attribute.Required &
+      Attribute.DefaultTo<'Tekintse meg csomagaj\u00E1nlatainkat!'>;
+    Cta_szoveg: Attribute.String &
+      Attribute.DefaultTo<'Kattints a legjobb aj\u00E1nlatok\u00E9rt'>;
+    Cta_gomb: Attribute.String &
+      Attribute.DefaultTo<'Csomagaj\u00E1nlatok megtekint\u00E9se'>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -77,6 +95,7 @@ declare module '@strapi/types' {
       'fooldal.gyik-tartalom': FooldalGyikTartalom;
       'fooldal.icon-box': FooldalIconBox;
       'fooldal.velemeny': FooldalVelemeny;
+      'footer-cta.footer-felett-cta': FooterCtaFooterFelettCta;
     }
   }
 }
