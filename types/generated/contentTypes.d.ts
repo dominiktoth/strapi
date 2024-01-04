@@ -1238,6 +1238,66 @@ export interface ApiIngatlanIngatlan extends Schema.CollectionType {
   };
 }
 
+export interface ApiIngatlanjainkIngatlanjaink extends Schema.SingleType {
+  collectionName: 'ingatlanjainks';
+  info: {
+    singularName: 'ingatlanjaink';
+    pluralName: 'ingatlanjainks';
+    displayName: 'Ingatlanjaink';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Cim: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Alcim: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Cta_szekcio: Attribute.Component<'footer-cta.footer-felett-cta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::ingatlanjaink.ingatlanjaink',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::ingatlanjaink.ingatlanjaink',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::ingatlanjaink.ingatlanjaink',
+      'oneToMany',
+      'api::ingatlanjaink.ingatlanjaink'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiSzolgaltatasSzolgaltatas extends Schema.CollectionType {
   collectionName: 'szolgaltatasok';
   info: {
@@ -1355,6 +1415,7 @@ declare module '@strapi/types' {
       'api::csomagjaink.csomagjaink': ApiCsomagjainkCsomagjaink;
       'api::fooldal.fooldal': ApiFooldalFooldal;
       'api::ingatlan.ingatlan': ApiIngatlanIngatlan;
+      'api::ingatlanjaink.ingatlanjaink': ApiIngatlanjainkIngatlanjaink;
       'api::szolgaltatas.szolgaltatas': ApiSzolgaltatasSzolgaltatas;
       'api::szolgaltatasaink.szolgaltatasaink': ApiSzolgaltatasainkSzolgaltatasaink;
     }
