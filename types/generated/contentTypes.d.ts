@@ -900,6 +900,87 @@ export interface ApiBlogOldalBlogOldal extends Schema.SingleType {
   };
 }
 
+export interface ApiCsomagjainkCsomagjaink extends Schema.SingleType {
+  collectionName: 'csomagjainks';
+  info: {
+    singularName: 'csomagjaink';
+    pluralName: 'csomagjainks';
+    displayName: 'Csomagjaink';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Cim1: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Alcim1: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Cim2: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Alcim2: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Csomagok: Attribute.Component<'csomagjaink.csomag', true> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Nyilatkozat: Attribute.Blocks &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::csomagjaink.csomagjaink',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::csomagjaink.csomagjaink',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::csomagjaink.csomagjaink',
+      'oneToMany',
+      'api::csomagjaink.csomagjaink'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiFooldalFooldal extends Schema.SingleType {
   collectionName: 'fooldals';
   info: {
@@ -1271,6 +1352,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::blog.blog': ApiBlogBlog;
       'api::blog-oldal.blog-oldal': ApiBlogOldalBlogOldal;
+      'api::csomagjaink.csomagjaink': ApiCsomagjainkCsomagjaink;
       'api::fooldal.fooldal': ApiFooldalFooldal;
       'api::ingatlan.ingatlan': ApiIngatlanIngatlan;
       'api::szolgaltatas.szolgaltatas': ApiSzolgaltatasSzolgaltatas;
