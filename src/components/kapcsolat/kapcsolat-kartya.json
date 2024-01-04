@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_kapcsolat_kapcsolat_kartyas",
+  "info": {
+    "displayName": "Kapcsolat_kartya",
+    "icon": "envelop",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Telefonszam": {
+      "type": "string",
+      "regex": "(\\(?\\+?36\\)?(\\s|-)?[1-9]\\d{0,1}(\\s|-)?\\d{3}(\\s|-)?\\d{4})|(\\(?\\d{1,2}\\)?(\\s|-)?\\d{3}(\\s|-)?\\d{4})"
+    },
+    "Szoveg": {
+      "type": "text"
+    },
+    "Ikon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Email": {
+      "type": "email"
+    },
+    "Cim": {
+      "type": "string"
+    },
+    "Link_szoveg": {
+      "type": "string"
+    },
+    "Link_url": {
+      "type": "string",
+      "regex": "\\b((https?:\\/\\/)?[\\w-]+(\\.[\\w-]+)+\\.?(:\\d+)?(\\/\\S*)?|(tel:\\s?\\+?36(\\s|-)?[1-9]\\d{0,1}(\\s|-)?\\d{3}(\\s|-)?\\d{4})|(tel:\\s?\\(?\\d{1,2}\\)?(\\s|-)?\\d{3}(\\s|-)?\\d{4})|(mailto:\\s?[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}))\\b"
+    }
+  }
+}

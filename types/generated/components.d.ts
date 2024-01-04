@@ -111,6 +111,24 @@ export interface FooterCtaFooterFelettCta extends Schema.Component {
   };
 }
 
+export interface KapcsolatKapcsolatKartya extends Schema.Component {
+  collectionName: 'components_kapcsolat_kapcsolat_kartyas';
+  info: {
+    displayName: 'Kapcsolat_kartya';
+    icon: 'envelop';
+    description: '';
+  };
+  attributes: {
+    Telefonszam: Attribute.String;
+    Szoveg: Attribute.Text;
+    Ikon: Attribute.Media;
+    Email: Attribute.Email;
+    Cim: Attribute.String;
+    Link_szoveg: Attribute.String;
+    Link_url: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -121,6 +139,7 @@ declare module '@strapi/types' {
       'fooldal.icon-box': FooldalIconBox;
       'fooldal.velemeny': FooldalVelemeny;
       'footer-cta.footer-felett-cta': FooterCtaFooterFelettCta;
+      'kapcsolat.kapcsolat-kartya': KapcsolatKapcsolatKartya;
     }
   }
 }

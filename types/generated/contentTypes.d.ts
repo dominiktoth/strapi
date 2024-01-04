@@ -1298,6 +1298,66 @@ export interface ApiIngatlanjainkIngatlanjaink extends Schema.SingleType {
   };
 }
 
+export interface ApiKapcsolatKapcsolat extends Schema.SingleType {
+  collectionName: 'kapcsolats';
+  info: {
+    singularName: 'kapcsolat';
+    pluralName: 'kapcsolats';
+    displayName: 'Kapcsolat';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Cim: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Alcim: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Kartyak: Attribute.Component<'kapcsolat.kapcsolat-kartya', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::kapcsolat.kapcsolat',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::kapcsolat.kapcsolat',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::kapcsolat.kapcsolat',
+      'oneToMany',
+      'api::kapcsolat.kapcsolat'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiSzolgaltatasSzolgaltatas extends Schema.CollectionType {
   collectionName: 'szolgaltatasok';
   info: {
@@ -1416,6 +1476,7 @@ declare module '@strapi/types' {
       'api::fooldal.fooldal': ApiFooldalFooldal;
       'api::ingatlan.ingatlan': ApiIngatlanIngatlan;
       'api::ingatlanjaink.ingatlanjaink': ApiIngatlanjainkIngatlanjaink;
+      'api::kapcsolat.kapcsolat': ApiKapcsolatKapcsolat;
       'api::szolgaltatas.szolgaltatas': ApiSzolgaltatasSzolgaltatas;
       'api::szolgaltatasaink.szolgaltatasaink': ApiSzolgaltatasainkSzolgaltatasaink;
     }
