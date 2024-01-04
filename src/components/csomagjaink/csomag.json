@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_csomagjaink_csomags",
+  "info": {
+    "displayName": "Csomag",
+    "icon": "cube",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Nev": {
+      "type": "string",
+      "required": true
+    },
+    "Opcio1": {
+      "type": "string",
+      "default": "Teljeskörű ingatlankezelés"
+    },
+    "Opcio2": {
+      "type": "string",
+      "default": "Lakásfelügyelet és leltár"
+    },
+    "Opcio3": {
+      "type": "string",
+      "default": "Engedély ügyintézés"
+    },
+    "Opcio4": {
+      "type": "string",
+      "default": "Fotózás és Staging"
+    },
+    "Opcio5": {
+      "type": "string",
+      "default": "Felújítás"
+    },
+    "Gomb": {
+      "type": "string",
+      "default": "Csomag kiválasztása"
+    },
+    "Kiemelt": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    }
+  }
+}

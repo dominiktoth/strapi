@@ -1,5 +1,29 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface CsomagjainkCsomag extends Schema.Component {
+  collectionName: 'components_csomagjaink_csomags';
+  info: {
+    displayName: 'Csomag';
+    icon: 'cube';
+    description: '';
+  };
+  attributes: {
+    Nev: Attribute.String & Attribute.Required;
+    Opcio1: Attribute.String &
+      Attribute.DefaultTo<'Teljesk\u00F6r\u0171 ingatlankezel\u00E9s'>;
+    Opcio2: Attribute.String &
+      Attribute.DefaultTo<'Lak\u00E1sfel\u00FCgyelet \u00E9s lelt\u00E1r'>;
+    Opcio3: Attribute.String &
+      Attribute.DefaultTo<'Enged\u00E9ly \u00FCgyint\u00E9z\u00E9s'>;
+    Opcio4: Attribute.String &
+      Attribute.DefaultTo<'Fot\u00F3z\u00E1s \u00E9s Staging'>;
+    Opcio5: Attribute.String & Attribute.DefaultTo<'Fel\u00FAj\u00EDt\u00E1s'>;
+    Gomb: Attribute.String &
+      Attribute.DefaultTo<'Csomag kiv\u00E1laszt\u00E1sa'>;
+    Kiemelt: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
 export interface FooldalBemutatkozasSzekcio extends Schema.Component {
   collectionName: 'components_bemutatkozas_bemutatkozas_szekcios';
   info: {
@@ -90,6 +114,7 @@ export interface FooterCtaFooterFelettCta extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'csomagjaink.csomag': CsomagjainkCsomag;
       'fooldal.bemutatkozas-szekcio': FooldalBemutatkozasSzekcio;
       'fooldal.gyakori-kerdesek': FooldalGyakoriKerdesek;
       'fooldal.gyik-tartalom': FooldalGyikTartalom;
