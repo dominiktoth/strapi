@@ -954,6 +954,12 @@ export interface ApiFooldalFooldal extends Schema.SingleType {
           localized: true;
         };
       }>;
+    Cta_szekcio: Attribute.Component<'footer-cta.footer-felett-cta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1053,6 +1059,66 @@ export interface ApiSzolgaltatasSzolgaltatas extends Schema.CollectionType {
   };
 }
 
+export interface ApiSzolgaltatasainkSzolgaltatasaink extends Schema.SingleType {
+  collectionName: 'szolgaltatasainks';
+  info: {
+    singularName: 'szolgaltatasaink';
+    pluralName: 'szolgaltatasainks';
+    displayName: 'Szolg\u00E1ltat\u00E1saink';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Cim: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Alcim: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Cta_szekcio: Attribute.Component<'footer-cta.footer-felett-cta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::szolgaltatasaink.szolgaltatasaink',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::szolgaltatasaink.szolgaltatasaink',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::szolgaltatasaink.szolgaltatasaink',
+      'oneToMany',
+      'api::szolgaltatasaink.szolgaltatasaink'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1074,6 +1140,7 @@ declare module '@strapi/types' {
       'api::fooldal.fooldal': ApiFooldalFooldal;
       'api::ingatlan.ingatlan': ApiIngatlanIngatlan;
       'api::szolgaltatas.szolgaltatas': ApiSzolgaltatasSzolgaltatas;
+      'api::szolgaltatasaink.szolgaltatasaink': ApiSzolgaltatasainkSzolgaltatasaink;
     }
   }
 }
