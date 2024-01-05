@@ -1334,6 +1334,12 @@ export interface ApiKapcsolatKapcsolat extends Schema.SingleType {
           localized: true;
         };
       }>;
+    Cta_szekcio: Attribute.Component<'footer-cta.footer-felett-cta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

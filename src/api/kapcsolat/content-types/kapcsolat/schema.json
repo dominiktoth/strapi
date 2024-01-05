@@ -42,6 +42,16 @@
         }
       },
       "component": "kapcsolat.kapcsolat-kartya"
+    },
+    "Cta_szekcio": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "footer-cta.footer-felett-cta"
     }
   }
 }
