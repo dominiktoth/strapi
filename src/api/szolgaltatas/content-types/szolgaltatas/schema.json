@@ -23,6 +23,13 @@
     "ShortDescription": {
       "type": "richtext",
       "required": true
+    },
+    "Ikon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

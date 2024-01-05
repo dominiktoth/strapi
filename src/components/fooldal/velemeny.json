@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_fooldal_velemenies",
+  "info": {
+    "displayName": "Velemeny",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "Nev": {
+      "type": "string",
+      "required": true
+    },
+    "Munka_tipusa": {
+      "type": "string",
+      "required": false
+    },
+    "Velemeny": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

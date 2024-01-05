@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_footer_cta_footer_felett_ctas",
+  "info": {
+    "displayName": "Footer_felett_cta",
+    "icon": "earth",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Cta_cim": {
+      "type": "text",
+      "required": true,
+      "default": "Tekintse meg csomagajánlatainkat!"
+    },
+    "Cta_szoveg": {
+      "type": "string",
+      "default": "Kattints a legjobb ajánlatokért"
+    },
+    "Cta_gomb": {
+      "type": "string",
+      "default": "Csomagajánlatok megtekintése"
+    }
+  }
+}
