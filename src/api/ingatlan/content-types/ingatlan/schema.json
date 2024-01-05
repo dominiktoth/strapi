@@ -16,7 +16,7 @@
       "type": "string",
       "required": true
     },
-    "Image": {
+    "FeaturedImage": {
       "type": "media",
       "multiple": true,
       "required": true,

@@ -781,7 +781,7 @@ export interface ApiIngatlanIngatlan extends Schema.CollectionType {
   };
   attributes: {
     Title: Attribute.String & Attribute.Required;
-    Image: Attribute.Media & Attribute.Required;
+    FeaturedImage: Attribute.Media & Attribute.Required;
     Platform: Attribute.Enumeration<['Booking', 'Airbnb']>;
     Owner: Attribute.String & Attribute.Required;
     OwnerImage: Attribute.Media;
