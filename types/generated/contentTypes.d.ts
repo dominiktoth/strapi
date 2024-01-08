@@ -900,6 +900,84 @@ export interface ApiBlogOldalBlogOldal extends Schema.SingleType {
   };
 }
 
+export interface ApiCegadatokCegadatok extends Schema.SingleType {
+  collectionName: 'cegadatoks';
+  info: {
+    singularName: 'cegadatok';
+    pluralName: 'cegadatoks';
+    displayName: 'C\u00E9gadatok';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Email: Attribute.Email &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Telefonszam: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Cim: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Facebook_url: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Twitter_url: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Instagram_url: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::cegadatok.cegadatok',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::cegadatok.cegadatok',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::cegadatok.cegadatok',
+      'oneToMany',
+      'api::cegadatok.cegadatok'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiCsomagjainkCsomagjaink extends Schema.SingleType {
   collectionName: 'csomagjainks';
   info: {
@@ -1478,6 +1556,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::blog.blog': ApiBlogBlog;
       'api::blog-oldal.blog-oldal': ApiBlogOldalBlogOldal;
+      'api::cegadatok.cegadatok': ApiCegadatokCegadatok;
       'api::csomagjaink.csomagjaink': ApiCsomagjainkCsomagjaink;
       'api::fooldal.fooldal': ApiFooldalFooldal;
       'api::ingatlan.ingatlan': ApiIngatlanIngatlan;
