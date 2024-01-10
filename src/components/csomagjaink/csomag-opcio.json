@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_csomagjaink_csomag_opcio",
+  "info": {
+    "displayName": "Csomag opció"
+  },
+  "options": {},
+  "attributes": {
+    "Opcio": {
+      "type": "string"
+    },
+    "Tartalmazza": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
