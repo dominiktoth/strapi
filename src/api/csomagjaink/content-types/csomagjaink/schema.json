@@ -61,7 +61,8 @@
         }
       },
       "component": "csomagjaink.csomag",
-      "required": true
+      "required": true,
+      "max": 3
     },
     "Nyilatkozat": {
       "pluginOptions": {
@@ -70,6 +71,18 @@
         }
       },
       "type": "blocks"
+    },
+    "Hero": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

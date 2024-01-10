@@ -848,6 +848,7 @@ export interface ApiBlogOldalBlogOldal extends Schema.SingleType {
     singularName: 'blog-oldal';
     pluralName: 'blog-oldals';
     displayName: 'Blog oldal';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -871,6 +872,12 @@ export interface ApiBlogOldalBlogOldal extends Schema.SingleType {
         };
       }>;
     Cta_szekcio: Attribute.Component<'footer-cta.footer-felett-cta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1028,8 +1035,17 @@ export interface ApiCsomagjainkCsomagjaink extends Schema.SingleType {
         i18n: {
           localized: true;
         };
+      }> &
+      Attribute.SetMinMax<{
+        max: 3;
       }>;
     Nyilatkozat: Attribute.Blocks &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1352,6 +1368,12 @@ export interface ApiIngatlanjainkIngatlanjaink extends Schema.SingleType {
           localized: true;
         };
       }>;
+    Hero: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1413,6 +1435,12 @@ export interface ApiKapcsolatKapcsolat extends Schema.SingleType {
         };
       }>;
     Cta_szekcio: Attribute.Component<'footer-cta.footer-felett-cta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1507,6 +1535,12 @@ export interface ApiSzolgaltatasainkSzolgaltatasaink extends Schema.SingleType {
         };
       }>;
     Cta_szekcio: Attribute.Component<'footer-cta.footer-felett-cta'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Hero: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

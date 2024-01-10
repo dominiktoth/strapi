@@ -19,6 +19,13 @@
     "Cta_gomb": {
       "type": "string",
       "default": "Csomagajánlatok megtekintése"
+    },
+    "Kep": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

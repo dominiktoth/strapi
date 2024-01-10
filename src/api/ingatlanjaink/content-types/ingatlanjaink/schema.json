@@ -42,6 +42,18 @@
         }
       },
       "component": "footer-cta.footer-felett-cta"
+    },
+    "Hero": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
