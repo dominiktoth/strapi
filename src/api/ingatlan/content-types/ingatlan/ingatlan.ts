@@ -11,7 +11,7 @@ export interface Ingatlan {
   id: number;
   attributes: {
     createdAt: Date;    updatedAt: Date;    publishedAt?: Date;    Title: string;
-    Image: { data: Media[] };
+    FeaturedImage: { data: Media[] };
     Platform?: Platform;
     Owner: string;
     OwnerImage?: { data: Media[] };
@@ -21,7 +21,7 @@ export interface Ingatlan {
 export interface Ingatlan_Plain {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  Title: string;
-  Image: Media[];
+  FeaturedImage: Media[];
   Platform?: Platform;
   Owner: string;
   OwnerImage?: Media[];
@@ -31,7 +31,7 @@ export interface Ingatlan_Plain {
 export interface Ingatlan_NoRelations {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  Title: string;
-  Image: number[];
+  FeaturedImage: number[];
   Platform?: Platform;
   Owner: string;
   OwnerImage?: number[];
@@ -41,7 +41,7 @@ export interface Ingatlan_NoRelations {
 export interface Ingatlan_AdminPanelLifeCycle {
   id: number;
   createdAt: Date;  updatedAt: Date;  publishedAt?: Date;  Title: string;
-  Image: AdminPanelRelationPropertyModification<Media>[];
+  FeaturedImage: AdminPanelRelationPropertyModification<Media>[];
   Platform?: Platform;
   Owner: string;
   OwnerImage?: AdminPanelRelationPropertyModification<Media>[];
