@@ -1220,6 +1220,7 @@ export interface ApiIngatlanIngatlan extends Schema.CollectionType {
         max: 5;
       }> &
       Attribute.DefaultTo<5>;
+    IngatlanLink: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

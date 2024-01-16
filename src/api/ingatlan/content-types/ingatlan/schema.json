@@ -55,6 +55,9 @@
       "max": 5,
       "min": 1,
       "default": 5
+    },
+    "IngatlanLink": {
+      "type": "string"
     }
   }
 }

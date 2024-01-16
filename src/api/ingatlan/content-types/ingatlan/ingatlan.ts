@@ -16,6 +16,7 @@ export interface Ingatlan {
     Owner: string;
     OwnerImage?: { data: Media[] };
     Rating?: number;
+    IngatlanLink?: string;
   };
 }
 export interface Ingatlan_Plain {
@@ -26,6 +27,7 @@ export interface Ingatlan_Plain {
   Owner: string;
   OwnerImage?: Media[];
   Rating?: number;
+  IngatlanLink?: string;
 }
 
 export interface Ingatlan_NoRelations {
@@ -36,6 +38,7 @@ export interface Ingatlan_NoRelations {
   Owner: string;
   OwnerImage?: number[];
   Rating?: number;
+  IngatlanLink?: string;
 }
 
 export interface Ingatlan_AdminPanelLifeCycle {
@@ -46,4 +49,5 @@ export interface Ingatlan_AdminPanelLifeCycle {
   Owner: string;
   OwnerImage?: AdminPanelRelationPropertyModification<Media>[];
   Rating?: number;
+  IngatlanLink?: string;
 }
